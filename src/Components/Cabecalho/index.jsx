@@ -27,7 +27,7 @@ const Header = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 0 15vw;
-  height: 10vh;
+  height: 15vh;
   align-items: center;
 `;
 
