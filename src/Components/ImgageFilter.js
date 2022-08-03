@@ -8,11 +8,11 @@ import utilidades from "../assets/images/utilidades.svg";
 
 export default (type) => {
   const Imagens = {
-    Restaurante: <IconeEx src={alimentacao} alt="alimentacao" />,
-    Utilidades: <IconeEx src={utilidades} alt="utilidades" />,
-    Saude: <IconeEx src={saude} alt="saude" />,
-    Transporte: <IconeEx src={transporte} alt="transporte" />,
-    Default: <IconeEx src={outros} alt="outros" />,
+    Restaurante: <IconeTema src={alimentacao} alt="alimentacao" />,
+    Utilidades: <IconeTema src={utilidades} alt="utilidades" />,
+    Saude: <IconeTema src={saude} alt="saude" />,
+    Transporte: <IconeTema src={transporte} alt="transporte" />,
+    Default: <IconeTema src={outros} alt="outros" />,
   };
   return Imagens[type] || Imagens.Default;
 };
@@ -20,4 +20,7 @@ export default (type) => {
 const IconeEx = styled.img`
   height: 45px;
   width: fit-content;
+`;
+const IconeTema = styled(IconeEx)`
+  filter: ${({ theme }) => theme.filter};
 `;
