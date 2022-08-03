@@ -2,9 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 import bank_logo from "../../assets/images/bank_logo.svg";
+import { Icone } from "../UI";
 import { corPrimaria } from "../UI/variaveis";
+import ThemeOn from "../../assets/images/themeOn.svg";
+import ThemeOff from "../../assets/images/themeOff.svg";
 
-const Cabecalho = () => {
+const Cabecalho = ({ ToggleTema, tema }) => {
   return (
     <Header className="cabecalho">
       <Image className="imagem-logo" src={bank_logo} alt="Logo Smart Bank" />
@@ -15,6 +18,9 @@ const Cabecalho = () => {
         <Btn primary className="btn-primario" href="https://google.com">
           Sair
         </Btn>
+        <BtnTema onClick={ToggleTema}>
+          {<Icone src={tema ? ThemeOff : ThemeOn} />}
+        </BtnTema>
       </div>
     </Header>
   );
@@ -46,4 +52,13 @@ const Btn = styled.a`
 
   color: ${(props) => (props.primary ? "white" : corPrimaria)};
   background: ${(props) => (props.primary ? corPrimaria : "white")};
+`;
+
+const BtnTema = styled.button`
+  position: absolute;
+  top: 4vh;
+  right: 20px;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
 `;
