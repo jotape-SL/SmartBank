@@ -1,6 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import Item from "../Item";
+import ImgageFilter from "../ImgageFilter";
+
+export default ({ props }) => {
+  return (
+    <Items>
+      {ImgageFilter(props.type)}
+      <Item {...props}></Item>
+      <span>{props.date}</span>
+    </Items>
+  );
+};
 
 const Items = styled.div`
   box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.1);
@@ -12,12 +23,3 @@ const Items = styled.div`
   padding: 10px;
   font-size: 1rem;
 `;
-
-export default ({ props }) => {
-  return (
-    <Items>
-      <Item {...props}></Item>
-      <span>{props.date}</span>
-    </Items>
-  );
-};
