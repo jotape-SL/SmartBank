@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { corPrimaria } from "./variaveis";
 
 const Icone = styled.img`
-  height: 30px;
+  height: 40px;
   width: 40px;
 `;
 

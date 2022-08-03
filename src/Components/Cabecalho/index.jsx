@@ -2,44 +2,53 @@ import React from "react";
 import styled from "styled-components";
 
 import bank_logo from "../../assets/images/bank_logo.svg";
-import { Icone } from "../UI";
+import { Icone, IconeTema } from "../UI";
 import { corPrimaria } from "../UI/variaveis";
-import ThemeOn from "../../assets/images/themeOn.svg";
-import ThemeOff from "../../assets/images/themeOff.svg";
+import ThemeOn from "../../assets/images/ThemeOn.svg";
+import ThemeOff from "../../assets/images/ThemeOff.svg";
 
 const Cabecalho = ({ ToggleTema, tema }) => {
   return (
     <Header className="cabecalho">
-      <Image className="imagem-logo" src={bank_logo} alt="Logo Smart Bank" />
-      <div>
-        <Btn className="btn-secundario" href="https://google.com">
-          Ajuda
-        </Btn>
-        <Btn primary className="btn-primario" href="https://google.com">
-          Sair
-        </Btn>
-        <BtnTema onClick={ToggleTema}>
-          {<Icone src={tema ? ThemeOff : ThemeOn} />}
-        </BtnTema>
-      </div>
+      <Image src={bank_logo} alt="Logo Smart Bank" />
+      <Btns>
+        <div>
+          <Btn href="https://google.com">Ajuda</Btn>
+          <Btn primary href="https://google.com">
+            Sair
+          </Btn>
+        </div>
+        <div>
+          <BtnTema onClick={ToggleTema}>
+            {<IconeTemas src={tema ? ThemeOff : ThemeOn} />}
+          </BtnTema>
+        </div>
+      </Btns>
     </Header>
   );
 };
 
 export default Cabecalho;
 
+const IconeTemas = styled(Icone)`
+  filter: invert(100%);
+`;
+
 const Header = styled.nav`
   background-color: ${corPrimaria};
   display: flex;
   justify-content: space-between;
-  padding: 0 15vw;
+  padding: 10px 15vw;
   height: 10vh;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 const Image = styled.img`
   height: 50px;
   width: 50px;
+`;
+const Btns = styled.div`
+  display: flex;
 `;
 
 const Btn = styled.a`
@@ -55,9 +64,6 @@ const Btn = styled.a`
 `;
 
 const BtnTema = styled.button`
-  position: absolute;
-  top: 4vh;
-  right: 20px;
   background-color: inherit;
   border: none;
   cursor: pointer;
