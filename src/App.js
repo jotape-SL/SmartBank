@@ -1,16 +1,18 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
 
+import { temaClaro, temaEscuro } from "./Components/UI/Temas";
 import GlobalStyle from "./Components/GlobalStyle";
 import Cabecalho from "./Components/Cabecalho";
 import Container from "./Components/Container";
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={temaEscuro}>
       <GlobalStyle />
       <Cabecalho />
       <Container />
-    </>
+    </ThemeProvider>
   );
 }
 
