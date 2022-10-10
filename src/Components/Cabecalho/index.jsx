@@ -12,17 +12,13 @@ const Cabecalho = ({ ToggleTema, tema }) => {
     <Header className="cabecalho">
       <Image src={bank_logo} alt="Logo Smart Bank" />
       <Btns>
-        <div>
-          <Btn href="https://google.com">Ajuda</Btn>
-          <Btn primary href="https://google.com">
-            Sair
-          </Btn>
-        </div>
-        <div>
-          <BtnTema onClick={ToggleTema}>
-            {<IconeTemas src={tema ? ThemeOff : ThemeOn} />}
-          </BtnTema>
-        </div>
+        <Btn href="https://google.com">Ajuda</Btn>
+        <Btn primary href="https://google.com">
+          Sair
+        </Btn>
+        <BtnTema onClick={ToggleTema}>
+          {<IconeTemas src={tema ? ThemeOff : ThemeOn} />}
+        </BtnTema>
       </Btns>
     </Header>
   );
@@ -40,7 +36,7 @@ const Header = styled.nav`
   justify-content: space-between;
   padding: 10px 15vw;
   height: 10vh;
-  align-items: flex-end;
+  align-items: center;
 `;
 
 const Image = styled.img`
@@ -49,6 +45,7 @@ const Image = styled.img`
 `;
 const Btns = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const Btn = styled.a`
