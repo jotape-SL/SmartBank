@@ -8,7 +8,7 @@ const Extrato = () => {
   return (
     <Box>
       {extratoLista.updates.map(({ ...props }) => {
-        return <Items props={props}></Items>;
+        return <Items key={props.id} props={props}></Items>;
       })}
       <Botao>Ver Mais</Botao>
     </Box>
