@@ -4,8 +4,8 @@ import styled from "styled-components";
 import bank_logo from "../../assets/images/bank_logo.svg";
 import { Icone, IconeTema } from "../UI";
 import { corPrimaria } from "../UI/variaveis";
-import ThemeOn from "../../assets/images/ThemeOn.svg";
-import ThemeOff from "../../assets/images/ThemeOff.svg";
+import ThemeOn from "../../assets/images/themeOn.svg";
+import ThemeOff from "../../assets/images/themeOff.svg";
 
 const Cabecalho = ({ ToggleTema, tema }) => {
   return (
